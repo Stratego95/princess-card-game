@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import CardC from "./components/CardC";
+import { Duke } from './classes/Cards';
 
 function App() {
+  const card1 = new Duke();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CardC card={card1} />
+      <CardC card={card1} />
+      <CardC card={card1} />
+      <CardC card={card1} />
+      <CardC card={card1} />
     </div>
   );
 }
