@@ -1,17 +1,23 @@
-import './App.css';
-import CardC from "./components/CardC";
-import { Duke } from './classes/Cards';
+import * as React from 'react';
+import { useState } from 'react';
+import WelcomePage from './components/WelcomePage';
 
 function App() {
-  const card1 = new Duke();
+  const [players, setPlayers] = useState([])
+  const [startGame, setStartGame] = useState(false)
+
+  const handleUpdatePlayers = (updatedPlayers) => {
+    setPlayers(updatedPlayers)
+  }
 
   return (
     <div className="App">
-      <CardC card={card1} />
-      <CardC card={card1} />
-      <CardC card={card1} />
-      <CardC card={card1} />
-      <CardC card={card1} />
+      {!startGame &&
+        <WelcomePage onStartGame={() => setStartGame(true)} onPlayersChanged={handleUpdatePlayers} />
+      }
+      {startGame &&
+        <h1>Start game</h1>
+      }
     </div>
   );
 }
