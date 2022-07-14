@@ -1,14 +1,18 @@
 
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { Player } from './../classes/Player';
 import Avatar from '@mui/material/Avatar';
 
-const WelcomePage = ({ onStartGame }) => {
+const WelcomePage = ({ onStartGame, onPlayersChanged }) => {
     const [players, setPlayers] = useState([])
     const [currentPlayerName, setCurrentPlayerName] = useState("")
+
+    useEffect(() => {
+        onPlayersChanged(players)
+    }, [players])
 
     const handleAddPlayer = () => {
         if (!currentPlayerName.length) return;

@@ -3,11 +3,12 @@ export class Player {
         this.isAlive = true;
         this.name = name;
         this.onTurn = false;
-        this.hand = undefined;
+        this.hand = [];
 
     }
-    drawCard() {
-        console.log("draw card")
+    drawCard(deck) {
+        const card = deck.selectCard()
+        this.hand.push(card)
     }
 
     playCard() {

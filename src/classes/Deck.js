@@ -9,6 +9,9 @@ export class Deck {
     }
 
     selectCard() {
-        console.log("select card")
+        const randomIdx = Math.floor(Math.random() * this.cards.length);
+        const cardForPlayer = this.cards[randomIdx]
+        this.cards.splice(randomIdx, 1)
+        return cardForPlayer;
     }
 }
