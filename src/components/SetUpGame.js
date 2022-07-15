@@ -3,10 +3,10 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { Player } from './../classes/Player';
+import { Player } from '../classes/Player';
 import Avatar from '@mui/material/Avatar';
 
-const WelcomePage = ({ onStartGame, onPlayersChanged }) => {
+const SetUpGame = ({ onStartGame, onPlayersChanged }) => {
     const [players, setPlayers] = useState([])
     const [currentPlayerName, setCurrentPlayerName] = useState("")
 
@@ -32,7 +32,6 @@ const WelcomePage = ({ onStartGame, onPlayersChanged }) => {
 
     return (
         <div>
-            <h1>Princess Game</h1>
             <TextField id="outlined-basic" label="Enter Player Name" variant="outlined" value={currentPlayerName} onChange={(event) => setCurrentPlayerName(event.target.value)} />
             <Button variant="outlined" onClick={handleAddPlayer} disabled={players.length === 6}>Add Player</Button>
             <Button variant="outlined" onClick={onStartGame} disabled={players.length < 2 || players.length > 6}>Start Game</Button>
@@ -41,4 +40,4 @@ const WelcomePage = ({ onStartGame, onPlayersChanged }) => {
     );
 }
 
-export default WelcomePage;
+export default SetUpGame;

@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { useState } from 'react';
-import WelcomePage from './components/WelcomePage';
+import { useState, createContext } from 'react';
+import SetUpGame from './components/SetUpGame';
 import GamePage from './components/GamePage';
 import { initDeck } from "./utils/generateObjects"
+
+export const playersContext = createContext([]);
 
 function App() {
   const [players, setPlayers] = useState([])
@@ -19,14 +21,17 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {!startGame &&
-        <WelcomePage onStartGame={() => initGame()} onPlayersChanged={handleUpdatePlayers} />
-      }
-      {startGame &&
-        <GamePage deck={deck} players={players} />
-      }
-    </div>
+    <playersContext.Provider value={players}>
+      <div className="App">
+        <h1>Princess Game</h1>
+        {!startGame &&
+          <SetUpGame onStartGame={() => initGame()} onPlayersChanged={handleUpdatePlayers} />
+        }
+        {startGame &&
+          <GamePage deck={deck} />
+        }
+      </div>
+    </playersContext.Provider>
   );
 }
 

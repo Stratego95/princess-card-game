@@ -11,7 +11,10 @@ export class Player {
         this.hand.push(card)
     }
 
-    playCard() {
-        console.log("play card")
+    playCard(card) {
+        if (!this.onTurn) return;
+        const cardNumber = card.number;
+        const idx = this.hand.findIndex(card => card.number === cardNumber);
+        this.hand.splice(idx, 1)
     }
 }

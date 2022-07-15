@@ -1,7 +1,7 @@
 export class King {
     name = "King";
     number = 8;
-    description = "desc"
+    abilityDescription = "desc"
     isDestroyed = false;
 
     ability() {
@@ -12,7 +12,7 @@ export class King {
 export class Duke {
     name = "Duke";
     number = 7;
-    description = "desc"
+    abilityDescription = "desc"
     isDestroyed = false;
 
     ability() {
@@ -23,7 +23,7 @@ export class Duke {
 export class Broker {
     name = "Broker";
     number = 6;
-    description = "desc"
+    abilityDescription = "desc"
     isDestroyed = false;
 
     ability() {
@@ -34,7 +34,7 @@ export class Broker {
 export class Ambassador {
     name = "Ambassador";
     number = 5;
-    description = "desc"
+    abilityDescription = "desc"
     isDestroyed = false;
 
     ability() {
@@ -45,7 +45,7 @@ export class Ambassador {
 export class Bible {
     name = "Bible";
     number = 4;
-    description = "desc"
+    abilityDescription = "desc"
     isDestroyed = false;
 
     ability() {
@@ -56,7 +56,7 @@ export class Bible {
 export class Weakling {
     name = "Weakling";
     number = 3;
-    description = "desc"
+    abilityDescription = "desc"
     isDestroyed = false;
 
     ability() {
@@ -67,7 +67,7 @@ export class Weakling {
 export class Spy {
     name = "Spy";
     number = 2;
-    description = "desc"
+    abilityDescription = "desc"
     isDestroyed = false;
 
     ability() {
@@ -78,7 +78,7 @@ export class Spy {
 export class Detective {
     name = "Detective";
     number = 1;
-    description = "desc"
+    abilityDescription = "desc"
     isDestroyed = false;
 
     ability() {
